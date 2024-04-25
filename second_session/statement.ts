@@ -1,6 +1,21 @@
 import { formatAsUSD, getAmountByType, getVolumnCredits } from "./utils";
 
-export function statement(invoice: any, plays: any) {
+type Performance = {
+  playID: string;
+  audience: number;
+};
+
+type Invoice = {
+  customer: string;
+  performances: Performance[];
+};
+
+type Plays = {
+  [key in string]: Play;
+};
+type Play = { name: string; type: string };
+
+export function statement(invoice: Invoice, plays: Plays) {
   let totalAmount = 0;
   let volumeCredits = 0;
   let result = `Statement for ${invoice.customer}\n`;
