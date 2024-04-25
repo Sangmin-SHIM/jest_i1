@@ -1,4 +1,4 @@
-import statement from "../second_session/statement";
+import { statement } from "../second_session/statement";
 import invoices from "../constant/invoices.json";
 import plays from "../constant/plays.json";
 
